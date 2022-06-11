@@ -1,0 +1,500 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap');
+
+/* Core styles */
+* {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    border: none; outline: none; 
+    text-decoration: none;
+    list-style: none;
+    transition: all .2s linear;
+}
+
+$bg-color: #0A121F;
+$main-color: #3A68B8;
+$grey-color: rgba(255,255,255,.55);
+$blue-color: #0d6efd;
+$white: #fff;
+
+@mixin displayFlex() {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+@mixin displayGrid($value1) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($value1, 1fr));
+    gap: 1.5rem;
+}
+
+@mixin infoText($value2) {
+    font-size: $value2;
+    color: $white;
+    font-weight: 700;
+    padding: 1.3rem 0;
+}
+
+html {
+    font-size: 62.5%; /* by defaul 1rem = 16px, => 1rem = 16 * 0.625 = 10px */
+    overflow-x: hidden;
+}   
+
+body {
+    background: $bg-color;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.description {
+    font-size: 1.6rem;
+    color: $grey-color;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 1.8rem 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1.2rem 2.8rem;
+    color: $white;
+    font-size: 1.6rem;
+    border-radius: .5rem;
+}
+
+#menu-btn {
+    cursor: pointer;
+    display: none;
+    font-size: 2.5rem;
+    color: $white;
+}
+
+.heading {
+    font-size: 2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: $white;
+}
+
+/* Header section styles */
+.header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: #314152;
+    padding: 2rem;
+    background-color: #0a121f;
+    
+    .container {
+        @include displayFlex();
+
+        .brand {
+            display: flex;
+            align-items: center;
+    
+            img {
+                width: 3.5rem;
+                height: 4.5rem;
+                object-fit: cover;
+            }
+    
+            h3 {
+                font-size: 2rem;
+                font-weight: 500;
+                color: $blue-color;
+                margin-left: 1rem;
+            }
+        }
+    
+        .navbar {
+            a {
+                font-size: 1.8rem;
+                color: $white;
+                margin-right: 4rem;
+                text-transform: capitalize;
+    
+                &.active {
+                    color: $blue-color;
+                }
+    
+                &:hover {
+                    color: $blue-color;
+                }
+            }
+    
+        }
+    
+        .registr {
+            .btn {
+                background: $blue-color;
+    
+                &:hover {
+                    background: $main-color;
+                }
+            }
+        }
+    }   
+}
+
+/* Home section styles */
+.home {
+    
+    .container {
+        margin-top: 8.5rem;
+        @include displayFlex();
+    
+        .content {
+            flex: 1 1 37.5rem;
+
+            .title {
+                font-size: 1.5rem;
+                font-weight: 500;
+                text-transform: uppercase;
+                color: $blue-color;
+            }
+    
+            .info {
+                @include infoText(3.8rem);
+            }
+    
+            button {
+                background: $main-color;
+                margin: 1.5rem .5rem 0 0;
+                text-transform: capitalize;
+    
+                &:hover {
+                    background: $blue-color;
+                }
+            }
+        }
+    
+        .image {
+            flex: 1 1 37.5rem;
+            text-align: center;
+
+            img {
+                width: 58rem;
+                height: 60rem;
+            }
+        }
+    }
+}
+
+/* Partners section styles */
+.partners {
+    padding: 2rem;
+    
+    .container {
+        // @include displayFlex();
+        margin-top: 7.5rem;
+        @include displayGrid(25rem);
+
+        .partner {
+            
+            img {
+                width: 19rem;
+                height: 5rem;
+            }
+        }
+    }
+}
+
+/* About section styles */
+.about {
+    background-color: #08101E;
+
+    .container {
+        @include displayFlex();
+
+        .image {
+            flex: 1 1 37.5rem;
+
+            img {
+                width: 58rem;
+                height: 60rem;
+            }
+        }
+
+        .content {
+            flex: 1 1 37.5rem;
+
+            .info {
+                @include infoText(3.4rem);
+            }
+
+            button {
+                margin-top: 2rem;
+                background: $blue-color;
+
+                &:hover {
+                    background: $main-color;
+                }
+            }
+        }
+    }
+}
+
+/* Services section styles */
+.services {
+    margin: 3.5rem 0;
+    background-color: #08101E;
+
+    .container {
+        position: relative;
+        height: 100%;
+        
+        
+
+    }
+}
+
+/* Blog section styles */
+.blog {
+    background-color: #08101E;
+
+    .container {
+        margin-top: 3.5rem;
+        @include displayFlex();
+
+        .content {
+            flex: 1 1 37.5rem;
+
+            .info {
+                @include infoText(3rem);
+            }
+        }
+
+        .image {
+            flex: 1 1 37.5rem;
+
+            img {
+                width: 58rem;
+                height: 60rem;
+            }
+        }
+    }
+}
+
+
+/* Footer section styles */
+.footer {
+
+    .container {
+        margin-top: 3.5rem;
+        @include displayGrid(21rem);
+
+        .content-1 {
+
+            h3 {
+                font-size: 2rem;
+                color: $blue-color;
+            }
+
+            .description {
+                font-size: 1.5rem;
+                color: $grey-color;
+                margin: 1.2rem 0;
+            }
+
+            h4 {
+                font-size: 1.5rem;
+                font-weight: 600;
+                margin: 1rem 0;
+                color: $white;
+
+                span {
+                    margin-right: .5rem;
+                }
+            }
+        }
+
+        .content-2 {
+
+            .links {
+                a {
+                    display: block;
+                    color: $grey-color;
+                    margin: 1.5rem 0;
+                    font-size: 1.5rem;
+                    text-transform: capitalize;
+
+                    &:hover {
+                        color: $white;
+                    }
+                }
+            }
+        }
+
+        .content-3 {
+
+            .links {
+                a {
+                    display: block;
+                    color: $grey-color;
+                    margin: 1.5rem 0;
+                    font-size: 1.5rem;
+                    text-transform: capitalize;
+
+                    &:hover {
+                        color: $white;
+                    }
+                }
+            }
+        }
+
+        .content-4 {
+
+            .links {
+                a {
+                    display: block;
+                    color: $grey-color;
+                    margin: 1.5rem 0;
+                    font-size: 1.5rem;
+                    text-transform: capitalize;
+
+                    &:hover {
+                        color: $white;
+                    }
+                }
+            }
+        }
+
+        .content-5 {
+            
+            p {
+                font-size: 1.5rem;
+                color: $grey-color;
+                margin: 1rem 0;   
+            }
+
+            .link {
+                color: $white;
+                font-size: 1.7rem;
+
+                &:hover {
+                    color: $grey-color;
+                }
+            }
+
+            .social-media {
+                a {
+                    color: $white;
+                    font-size: 1.8rem;
+                    margin: 1rem 1rem 1rem 0;
+
+                    &:hover {
+                        color: $grey-color;
+                    }
+                }
+            }
+
+            .select {
+                margin-top: 5rem;
+
+                i {
+                    color: $white;
+                    font-size: 1.8rem;
+                }
+
+                label {
+                    margin: 0 .5rem;
+                    color: $grey-color;
+                    font-size: 1.9rem;
+                }
+
+                select {
+                    font-size: 1.5rem;
+                    color: $main-color;
+                    border-radius: .25rem;
+                }
+            }
+        }
+    }
+}
+
+
+/* Media queries */
+@media only screen and (max-width: 991px) {
+
+    html {
+        font-size: 55%;
+    }
+
+    section {
+        .container {
+            .image {
+                text-align: center;
+            }
+        }
+    }
+
+    .header {
+
+        .container {
+            padding: 1rem;
+
+            .registr {
+                display: none;
+            }
+        }
+    }
+
+    .container {
+        padding: 2rem;
+    }
+
+    .partners {
+        .container {
+            text-align: center;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    
+    #menu-btn {
+        display: inline-block;
+
+        &.fa-times {
+            transform: rotate(180deg);
+        }
+    }
+
+    .header {
+
+        .container {
+
+            .navbar {
+                position: absolute;
+                top: 99%; left: 0; right: 0;
+                border-top: .1rem solid $grey-color;
+                border-bottom: .1rem solid $grey-color;
+                background-color: $bg-color;
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+
+                &.active {
+                    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+                }
+
+                a {
+                    display: block;
+                    margin: 2rem;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 450px) {
+
+    html {
+        font-size: 50%;
+    }
+}
