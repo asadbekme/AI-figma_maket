@@ -90,7 +90,6 @@ body {
     z-index: 1000;
     background: #314152;
     padding: 2rem;
-    background-color: #0a121f;
     
     .container {
         @include displayFlex();
@@ -197,10 +196,13 @@ body {
         @include displayGrid(25rem);
 
         .partner {
-            
+            width: 19rem;
+            height: 5rem;
+
             img {
-                width: 19rem;
-                height: 5rem;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;    
             }
         }
     }
@@ -244,14 +246,37 @@ body {
 /* Services section styles */
 .services {
     margin: 3.5rem 0;
-    background-color: #08101E;
 
     .container {
-        position: relative;
-        height: 100%;
-        
-        
 
+        .service-slider {
+
+            .slide {
+                // width: 30rem;
+                border: .1rem solid $white;
+                text-align: center;
+                border-radius: .5rem;
+                padding: 2rem;
+                margin-bottom: 4rem;
+                background: #111825;
+
+                img {
+                    width: 100%;
+                    height: 8rem;
+                }
+            
+                h3 {
+                    color: $white;
+                    font-size: 1.6rem;
+                    opacity: .8;
+                    margin: 2.5rem 0;
+                }
+
+                .description {
+                    font-size: 1.4rem;
+                }
+            }
+        }
     }
 }
 
@@ -288,7 +313,7 @@ body {
 
     .container {
         margin-top: 3.5rem;
-        @include displayGrid(21rem);
+        @include displayGrid(17rem);
 
         .content-1 {
 
