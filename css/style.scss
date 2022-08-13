@@ -226,6 +226,7 @@ body {
 /* About section styles */
 .about {
     background-color: #08101E;
+    margin-top: 2rem;
 
     .container {
         @include displayFlex();
@@ -234,8 +235,9 @@ body {
             flex: 1 1 37.5rem;
 
             img {
-                width: 58rem;
-                height: 60rem;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
             }
         }
 
@@ -247,7 +249,7 @@ body {
             }
 
             button {
-                margin-top: 2rem;
+                margin-top: 1.5rem;
                 background: $blue-color;
 
                 &:hover {
@@ -268,7 +270,6 @@ body {
 
             .slide {
                 // width: 30rem;
-                border: .1rem solid $white;
                 text-align: center;
                 border-radius: .5rem;
                 padding: 2rem;
@@ -282,13 +283,13 @@ body {
             
                 h3 {
                     color: $white;
-                    font-size: 1.6rem;
+                    font-size: 1.8rem;
                     opacity: .8;
                     margin: 2.5rem 0;
                 }
 
                 .description {
-                    font-size: 1.4rem;
+                    font-size: 1.6rem;
                 }
             }
         }
@@ -321,7 +322,6 @@ body {
         }
     }
 }
-
 
 /* Footer section styles */
 .footer {
