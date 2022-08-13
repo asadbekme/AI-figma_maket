@@ -3,12 +3,11 @@
 
 /* Core styles */
 * {
-    font-family: 'Open Sans', sans-serif;
-    margin: 0; padding: 0;
+    margin: 0; 
+    padding: 0;
     box-sizing: border-box;
-    border: none; outline: none; 
-    text-decoration: none;
-    list-style: none;
+    border: none; 
+    outline: none; 
     transition: all .2s linear;
 }
 
@@ -23,13 +22,13 @@ $white: #fff;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
 @mixin displayGrid($value1) {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax($value1, 1fr));
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
 @mixin infoText($value2) {
@@ -39,17 +38,26 @@ $white: #fff;
     padding: 1.3rem 0;
 }
 
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
 html {
     font-size: 62.5%; /* by defaul 1rem = 16px, => 1rem = 16 * 0.625 = 10px */
     overflow-x: hidden;
 }   
 
 body {
+    font-family: 'Open Sans', sans-serif;
     background: $bg-color;
 }
 
 .container {
-    max-width: 1140px;
+    max-width: 1160px;
     margin: 0 auto;
 }
 
@@ -58,7 +66,7 @@ body {
     color: $grey-color;
     font-weight: 400;
     line-height: 1.5;
-    margin: 1.8rem 0;
+    margin: 1.5rem 0;
 }
 
 .btn {
@@ -87,12 +95,13 @@ body {
 .header {
     position: fixed;
     top: 0; left: 0; right: 0;
+    width: 100%;
     z-index: 1000;
     background: #314152;
-    padding: 2rem;
     
     .container {
         @include displayFlex();
+        padding: 2rem;
 
         .brand {
             display: flex;
@@ -127,7 +136,6 @@ body {
                     color: $blue-color;
                 }
             }
-    
         }
     
         .registr {
@@ -144,10 +152,11 @@ body {
 
 /* Home section styles */
 .home {
-    
+    margin-top: 7rem;
+
     .container {
-        margin-top: 8.5rem;
         @include displayFlex();
+        padding: 2rem;
     
         .content {
             flex: 1 1 37.5rem;
@@ -171,6 +180,11 @@ body {
                 &:hover {
                     background: $blue-color;
                 }
+
+                i {
+                    margin-right: .6rem;
+                    font-size: 1.7rem;
+                }
             }
         }
     
@@ -179,8 +193,9 @@ body {
             text-align: center;
 
             img {
-                width: 58rem;
-                height: 60rem;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;   
             }
         }
     }
@@ -188,15 +203,15 @@ body {
 
 /* Partners section styles */
 .partners {
-    padding: 2rem;
+    margin-top: 7.5rem;
     
     .container {
-        // @include displayFlex();
-        margin-top: 7.5rem;
-        @include displayGrid(25rem);
+        @include displayFlex();
+        padding: 2rem;
+
 
         .partner {
-            width: 19rem;
+            width: 20rem;
             height: 5rem;
 
             img {
@@ -283,9 +298,9 @@ body {
 /* Blog section styles */
 .blog {
     background-color: #08101E;
+    margin-top: 3.5rem;
 
     .container {
-        margin-top: 3.5rem;
         @include displayFlex();
 
         .content {
@@ -310,9 +325,9 @@ body {
 
 /* Footer section styles */
 .footer {
+    margin-top: 3.5rem;
 
     .container {
-        margin-top: 3.5rem;
         @include displayGrid(17rem);
 
         .content-1 {
@@ -452,8 +467,14 @@ body {
         font-size: 55%;
     }
 
+    .container {
+        padding: 2.5rem;
+    }
+
     section {
+        
         .container {
+
             .image {
                 text-align: center;
             }
@@ -463,7 +484,7 @@ body {
     .header {
 
         .container {
-            padding: 1rem;
+            padding: 2.5rem;
 
             .registr {
                 display: none;
@@ -471,15 +492,23 @@ body {
         }
     }
 
-    .container {
-        padding: 2rem;
-    }
+    .home {
 
-    .partners {
         .container {
-            text-align: center;
+
+            .content {
+                margin-top: 2rem;
+
+                .info {
+                    font-size: 3rem;
+                }
+
+                .description {
+                    margin: 1rem 0;
+                }
+            }
         }
-    }
+    }    
 }
 
 @media only screen and (max-width: 768px) {
@@ -517,9 +546,17 @@ body {
     }
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 576px) {
 
     html {
         font-size: 50%;
+    }
+
+    .partners {
+
+        .container {
+            flex-direction: column;
+            flex-wrap: nowrap;
+        }
     }
 }
